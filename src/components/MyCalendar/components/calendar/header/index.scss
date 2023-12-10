@@ -1,0 +1,13 @@
+.calendar__content {
+  padding: 4px;
+  user-select: none;
+
+  .datetime {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .year_desc {
+    font-size: 0.8em;
+  }
+}

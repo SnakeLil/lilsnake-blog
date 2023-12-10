@@ -1,0 +1,100 @@
+.lil {
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    .poker-body {
+        position: absolute;
+        top: 150px;
+        left: 60px;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .text {
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid gray;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s ease;
+        &:hover {
+            border: 1px solid $warning;
+        }
+    }
+    .card {
+        width: 100%;
+        height: 500px;
+        transition: all 1s ease;
+        display: flex;
+        gap: 10px;
+        .left {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .lefttop{
+                flex: 4;
+                border-radius: 5px;
+                width: 100%;
+                border: 1px solid gray;
+                cursor: pointer;
+                transition: all 1s ease;
+                &:hover {
+                    border: 1px solid $warning;
+                }
+            }
+            .leftbtm {
+                flex: 1;
+                border-radius: 5px;
+                width: 100%;
+                border: 1px solid gray;
+                cursor: pointer;
+                display: flex;
+                gap: 10px;
+                transition: all 1s ease;
+                &:hover {
+                    border: 1px solid $lightyellow;
+                }
+            }
+        }
+        .right {
+            border-radius: 5px;
+            flex: 2;
+            border: 1px solid gray;
+            cursor: pointer;
+            transition: all 1s ease;
+            &:hover {
+                border: 1px solid $lightyellow;
+               
+            }
+        }
+    }
+    .md {
+        display: flex;
+        gap: 20px;
+        .lilLeft {
+            color: black;
+            padding: 50px 50px;
+            flex: 4;
+            min-height: 100vh;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .lilRight {
+            overflow: hidden;
+            flex: 1;
+            min-height: 100vh;
+            border-radius: 5px;
+            background-color: $bg;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+    }
+
+}

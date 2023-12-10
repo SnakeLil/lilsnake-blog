@@ -1,0 +1,94 @@
+.aboutme {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .avatar {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid gray;
+        padding: 10px;
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+        }
+        h1 {
+            letter-spacing: 0.7ch;
+        }
+    }
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+        .first {
+            height: 220px;
+            .me {
+                flex: 3;
+                height: 100%;
+                border: 1px solid gray;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                padding: 30px;
+                span {
+                    font-variant: all-small-caps ;
+                    
+                }
+            }
+            .intro {
+                flex: 2;
+                height: 100%;
+                border: 1px solid gray;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 30px;
+            }
+        }
+        .second {
+            height: 320px;
+            border: 1px solid gray;
+            border-radius: 15px;
+        }
+        .third {
+            height: 220px;
+            .me {
+                flex: 3;
+                height: 100%;
+                border: 1px solid gray;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                padding: 30px;
+            }
+            .intro {
+                flex: 2;
+                height: 100%;
+                border: 1px solid gray;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 30px;
+            }
+        }
+    }
+}
