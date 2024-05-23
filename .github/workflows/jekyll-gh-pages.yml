@@ -37,6 +37,9 @@ jobs:
       run: pnpm i
     - name: Build
       run: pnpm build
+    - name: Configure SSH
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     - name: Deploy 🚀 # 部署
       uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
