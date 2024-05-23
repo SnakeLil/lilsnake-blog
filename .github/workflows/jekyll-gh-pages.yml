@@ -16,6 +16,17 @@ jobs:
       with:
         node-version: 18.19.0
         cache: 'npm'
+    - name: Cache
+      # 缓存命中结果会存储在steps.[id].outputs.cache-hit里，该变量在继后的step中可读
+      id: cache-dependencies
+      uses: actions/cache@v3
+      with:
+        # 缓存文件目录的路径
+        path: |
+          **/node_modules
+        # key中定义缓存标志位的生成方式。runner.OS指当前环境的系统。外加对yarn.lock内容生成哈希码作为key值，如果yarn.lock改变则代表依赖有变化。
+        # 这里用yarn.lock而不是package.json是因为package.json中还有version和description之类的描述项目但和依赖无关的属性
+        key: ${{runner.OS}}-${{hashFiles('**/pnpm-lock.yaml')}}
     - name: Set registry
       run: npm config set registry https://registry.npmmirror.com
     - name: Install pnpm
@@ -26,3 +37,8 @@ jobs:
       run: pnpm i
     - name: Build
       run: pnpm build
+    - name: Deploy 🚀 # 部署
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+        branch: static-pages # 部署后提交到的分支
+        folder: dist # 这里填打包好的目录名称
