@@ -1,8 +1,10 @@
 name: GitHub Actions Build and Deploy Demo
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,12 +17,12 @@ jobs:
         node-version: 18.19.0
         cache: 'npm'
     - name: Set registry
-        run: npm config set registry https://registry.npmmirror.com
+      run: npm config set registry https://registry.npmmirror.com
     - name: Install pnpm
-        run: npm i -g pnpm
-    - name: Set registry
-        run: pnpm config set registry https://registry.npmmirror.com
+      run: npm i -g pnpm
+    - name: Set pnpm registry
+      run: pnpm config set registry https://registry.npmmirror.com
     - name: Install dependencies
-        run: pnpm i
+      run: pnpm i
     - name: Build
-        run: pnpm build
+      run: pnpm build
