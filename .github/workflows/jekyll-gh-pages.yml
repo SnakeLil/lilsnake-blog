@@ -1,0 +1,31 @@
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.19.0
+          cache: 'npm'
+    - name: Set registry
+        run: npm config set registry https://registry.npmmirror.com
+    - name: Install pnpm
+        run: npm i -g pnpm
+    - name: Set registry
+        run: pnpm config set registry https://registry.npmmirror.com
+    - name: Install dependencies
+        run: pnpm i
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: pnpm build
