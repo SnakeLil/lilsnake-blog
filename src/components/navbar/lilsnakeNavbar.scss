@@ -1,0 +1,87 @@
+.lilsnake-navbar {
+    height: 100px;
+    // background: white;
+    
+    .wraper {
+        opacity: 0.78;
+        max-width: 1366px;
+        padding: 0 20px;
+        border-radius: 7px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        border: 1px solid rgb(102, 102, 102);
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.12);
+        border-top: none;
+        .logo {
+            font-family: $base-font;
+            color: white;
+            letter-spacing: 0.3ch;
+            font-weight: bold;
+            cursor: pointer;
+            transition:all 1s ease;
+
+            &:hover {
+                transform: scale(1.1);
+
+            }
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .itemlink {
+                .menu-item {
+                    font-family: $base-font;
+                    width: fit-content;
+                    height: 30px;
+                    transition: all 0.3s ease;
+                    color: lightgray;  
+                    font-size: 16px;
+                    padding: 0 35px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    display: flex;
+                    border-radius: 7px;
+                    align-items: center;
+                    justify-content: center;
+    
+                    &:hover {
+                        background-color: white;
+                        color: $btnhover;
+                    }
+    
+                }
+            }
+
+        }
+        .featrue {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .featrue-item {
+                font-family: $base-font;
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+                cursor: pointer;
+                font-weight: bold;
+                display: flex;
+                border-radius: 5px;
+                align-items: center;
+                justify-content: center;
+                &:hover {
+                    background-color: white;
+                    color: $btnhover;
+                }
+            }
+        }
+    }
+
+    .dialog-body {
+
+    }
+}
