@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './timeLine.scss'
+import './timeline.scss'
 import '@/style/lilsnake.scss'
 import request from '@/utils/request/request.js'
 import showdown from 'showdown'
