@@ -9,10 +9,18 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm i && npm build
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.19.0
+        cache: 'npm'
+    - name: Set registry
+        run: npm config set registry https://registry.npmmirror.com
+    - name: Install pnpm
+        run: npm i -g pnpm
+    - name: Set registry
+        run: pnpm config set registry https://registry.npmmirror.com
+    - name: Install dependencies
+        run: pnpm i
+    - name: Build
+        run: pnpm build
