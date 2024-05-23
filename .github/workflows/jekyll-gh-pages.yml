@@ -41,10 +41,10 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       with:
         # Upload dist repository
-        path: './dist'
+        path: '/dist'
     - name: Deploy 🚀 # 部署
       uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
         branch: static-pages # 部署后提交到的分支
-        folder: './dist' # 这里填打包好的目录名称
+        folder: '/dist' # 这里填打包好的目录名称
         token: ${{ secrets.ACCESS_TOKEN }}  # 使用 Personal Access 
